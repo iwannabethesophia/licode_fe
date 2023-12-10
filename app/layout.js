@@ -14,11 +14,9 @@ export default function RootLayout({ children }) {
     <body className="font-[sfprorounded]">
       <LicodeNavbar />
 
-      <br/><br/><br/>
-      <div className="">
+      <div className="mt-24 mb-32">
         {children}
       </div>
-      <br/><br/><br/>
       
       <LicodeFooter />
     </body>
