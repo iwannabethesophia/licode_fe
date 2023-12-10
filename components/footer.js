@@ -10,15 +10,15 @@ export default function LicodeFooter() {
       <div className="w-full text-center">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <div className="text-normal font-mono text-2xl hover:underline hover:underline-offset-4"><Link href="/">licode.net</Link></div>
-          <Footer.LinkGroup>
-            <Footer.Link href="#">About</Footer.Link>
-            <Footer.Link href="#">Privacy Policy</Footer.Link>
-            <Footer.Link href="#">Licensing</Footer.Link>
-            <Footer.Link href="#">Contact</Footer.Link>
+          <Footer.LinkGroup className="space-x-2">
+            <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">About</Link>
+            <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">Privacy Policy</Link>
+            <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">Licensing</Link>
+            <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">Contact</Link>
           </Footer.LinkGroup>
         </div>
         <Footer.Divider />
-        <Footer.Copyright href="#" by="Flowbite™" year={2022} />
+        <Footer.Copyright href="#" by="licode.net™" year={2023} />
       </div>
     </Footer>
   );
