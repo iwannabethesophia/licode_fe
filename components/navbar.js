@@ -27,13 +27,13 @@ export default function LicodeNavbar() {
         </Link>
         <div className="flex items-center space-x-2 rtl:space-x-reverse">
           <Link href="/register">
-            <IconButton className="bg-white text-[#0066ff] border border-[#0066ff] hover:bg-[#0066ff] hover:text-white hover:border-[#0066ff] transition duration-300 text-sm">
+            <IconButton className="bg-white text-[#0066ff] border-2 border-[#0066ff] hover:bg-[#0066ff] hover:text-white hover:border-[#0066ff] transition duration-300 text-sm rounded-xl">
               Register
               <FaArrowRight className="ml-2" />
             </IconButton>
           </Link>
           <Link href="/login">
-            <IconButton className="bg-[#0066ff] border border-[#0066ff] hover:border-blue-700 hover:bg-blue-700 text-sm text-white">
+            <IconButton className="bg-[#0066ff] border-2 border-[#0066ff] hover:border-blue-700 hover:bg-blue-700 text-sm text-white rounded-xl">
               Login
               <FaArrowRight className="ml-2" />
             </IconButton>
