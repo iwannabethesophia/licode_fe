@@ -18,7 +18,7 @@ export function TooltipButton({
 }) {
   return (
     <Tooltip content={tooltipContent} trigger={tooltipTrigger} placement={tooltipPlacement} arrow={tooltipArrow} className={tooltipClassName} animation={tooltipAnimation}>
-      <button className={twMerge('flex items-center py-2 px-4 rounded-xl', buttonClassName)}>
+      <button className={twMerge('flex items-center py-2 px-4 rounded-2xl', buttonClassName)}>
         {children}
       </button>
     </Tooltip>
@@ -27,7 +27,7 @@ export function TooltipButton({
 
 export function IconButton({ className="", children }) {
   return (
-    <button className={twMerge('flex items-center py-2 px-4 rounded-xl', className)}>
+    <button className={twMerge('flex items-center py-2 px-4 rounded-2xl', className)}>
       {children}
     </button>
   )
