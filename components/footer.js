@@ -12,7 +12,7 @@ export default function LicodeFooter() {
           <div className="text-normal font-mono text-2xl hover:underline hover:underline-offset-4"><Link href="/">licode.net</Link></div>
           <Footer.LinkGroup className="space-x-2">
             <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">About</Link>
-            <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">Privacy Policy</Link>
+            <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">Terms & Conditions</Link>
             <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">Licensing</Link>
             <Link href="#" className="hover:underline hover:underline-offset-4 text-sm px-4 py-2 rounded-xl hover:bg-[#0066ff] hover:text-white hover:scale-110 hover:shadow-xl transition duration-300">Contact</Link>
           </Footer.LinkGroup>
