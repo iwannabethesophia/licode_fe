@@ -1,27 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'sfprorounded-black';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Black.woff2') format('woff2');
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: 'sfprorounded-bold';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Bold.woff2') format('woff2');
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@font-face {
+  font-family: 'sfprorounded-heavy';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Heavy.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'sfprorounded-light';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Light.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'sfprorounded-medium';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Medium.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'sfprorounded';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Regular.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'sfprorounded-semibold';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Semibold.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'sfprorounded-thin';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Thin.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'sfprorounded-ultralight';
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/SF-Pro-Rounded-Ultralight.woff2') format('woff2');
 }
