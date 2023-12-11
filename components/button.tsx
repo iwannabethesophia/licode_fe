@@ -1,4 +1,4 @@
-//'use client'
+'use client'
 
 /* components and icon import */
 import { Tooltip } from 'flowbite-react'
