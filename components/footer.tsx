@@ -1,7 +1,9 @@
 'use client';
 
+/* components and icon */
 import { Footer } from 'flowbite-react';
 
+/* Link navigation for client navigation */
 import Link from 'next/link';
 
 export default function LicodeFooter() {
