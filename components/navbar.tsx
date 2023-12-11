@@ -1,7 +1,7 @@
 'use client'
 
-import Link from 'next/link'
 
+/* components and icon */
 import { IconButton } from '@/components/button'
 import { DividerX } from '@/components/divider'
 
@@ -9,6 +9,9 @@ import {
   FaArrowRight,
   FaSistrix,
 } from "react-icons/fa6"
+
+/* useful stuff */
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
