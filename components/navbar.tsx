@@ -6,6 +6,7 @@ import { IconButton } from '@/components/button'
 
 import {
   FaArrowRight,
+  FaSistrix,
 } from "react-icons/fa6"
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
@@ -26,18 +27,29 @@ export default function LicodeNavbar() {
             <div className="self-center text-2xl font-mono whitespace-nowrap hover:underline-offset-4 hover:underline">licode.net</div>
         </Link>
         <div className="flex items-center space-x-2 rtl:space-x-reverse">
-          <Link href="/register">
-            <IconButton className="bg-white text-[#0066ff] border-2 border-[#0066ff] hover:bg-[#0066ff] hover:text-white hover:border-[#0066ff] transition duration-300 text-sm rounded-xl">
-              Register
-              <FaArrowRight className="ml-2" />
-            </IconButton>
-          </Link>
-          <Link href="/login">
-            <IconButton className="bg-[#0066ff] border-2 border-[#0066ff] hover:border-blue-700 hover:bg-blue-700 text-sm text-white rounded-xl">
-              Login
-              <FaArrowRight className="ml-2" />
-            </IconButton>
-          </Link>
+          <div className="relative">
+            <div className="absolute inset-y-0 start-0 ps-3 inline-flex items-center">
+              <FaSistrix />
+            </div>
+            <input className="ps-10 block border-2 border-slate-100 outline-none w-96 text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200 hover:border-slate-200" placeholder="Search something"/>
+          </div>
+
+          <div className="h-6 border-[1px] bg-black border-gray-300 rounded-t-xl rounded-b-xl"></div>
+
+          <div className="flex space-x-2">
+            <Link href="/register">
+              <IconButton className="bg-white text-[#0066ff] border-2 border-[#0066ff] hover:bg-[#0066ff] hover:text-white hover:border-[#0066ff] transition duration-300 text-sm rounded-xl">
+                Register
+                <FaArrowRight className="ml-2" />
+              </IconButton>
+            </Link>
+            <Link href="/login">
+              <IconButton className="bg-[#0066ff] border-2 border-[#0066ff] hover:border-blue-700 hover:bg-blue-700 text-sm text-white rounded-xl">
+                Login
+                <FaArrowRight className="ml-2" />
+              </IconButton>
+            </Link>
+          </div>
         </div>
     </div>
 </nav>
