@@ -88,13 +88,13 @@ export default function ProblemsetPage() {
     </div>
     <div className="grid grid-cols-3 gap-4 w-full">
       <div className="relative col-span-2">
-        <div className="flex justify-between items-center overflow-x-auto mb-4">
-          <div className="items-center justify-center">
+        <div className="flex items-center justify-between overflow-x-auto mb-4">
+          <div className="flex items-center justify-center">
             <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} theme={paginationTheme} showIcons />
           </div>
-          <div className="items-center justify-end">
+          <div className="flex items-center justify-end mt-2">
             <label>Entries:</label>
-            <input className="ml-2 outline-none bg-slate-100 px-4 py-2 w-16 rounded-xl hover:bg-slate-200" value={pageOffset} onChange={event => setPageOffset(event.target.value == "" ? 0 : parseInt(event.target.value.toString()))} />
+            <input className="ml-2 outline-none bg-slate-100 px-4 py-1 w-16 rounded-xl hover:bg-slate-200" value={pageOffset} onChange={event => setPageOffset(event.target.value == "" ? 0 : parseInt(event.target.value.toString()))} />
           </div>
         </div>
         {
@@ -141,12 +141,12 @@ export default function ProblemsetPage() {
           ))
         }
         <div className="flex justify-between items-center overflow-x-auto mb-4">
-          <div className="items-center justify-center">
+          <div className="flex items-center justify-center">
             <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} theme={paginationTheme} showIcons />
           </div>
-          <div className="items-center justify-end">
+          <div className="flex items-center justify-end mt-2">
             <label>Entries:</label>
-            <input className="ml-2 outline-none bg-slate-100 px-4 py-2 w-16 rounded-xl hover:bg-slate-200" value={pageOffset} onChange={event => setPageOffset(event.target.value == "" ? 0 : parseInt(event.target.value.toString()))} />
+            <input className="ml-2 outline-none bg-slate-100 px-4 py-1 w-16 rounded-xl hover:bg-slate-200" value={pageOffset} onChange={event => setPageOffset(event.target.value == "" ? 0 : parseInt(event.target.value.toString()))} />
           </div>
         </div>
       </div>
