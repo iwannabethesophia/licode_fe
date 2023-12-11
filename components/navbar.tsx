@@ -3,6 +3,7 @@
 import Link from 'next/link'
 
 import { IconButton } from '@/components/button'
+import { DividerX } from '@/components/divider'
 
 import {
   FaArrowRight,
@@ -34,7 +35,7 @@ export default function LicodeNavbar() {
             <input className="ps-10 block border-2 border-slate-100 outline-none w-96 text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200 hover:border-slate-200" placeholder="Search something"/>
           </div>
 
-          <div className="h-6 border-[1px] bg-black border-gray-300 rounded-t-xl rounded-b-xl"></div>
+          <DividerX height={8} color="gray-300" />
 
           <div className="flex space-x-2">
             <Link href="/register">
