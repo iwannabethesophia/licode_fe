@@ -6,7 +6,7 @@ import { Tooltip } from 'flowbite-react'
 /* useful stuff */
 import { twMerge } from 'tailwind-merge'
 
-export function TooltipButton({
+function TooltipButton({
   buttonClassName="",
   tooltipContent="",
   tooltipClassName="",
@@ -25,10 +25,12 @@ export function TooltipButton({
   )
 }
 
-export function IconButton({ className="", children }) {
+function IconButton({ className="", children }) {
   return (
     <button className={twMerge('flex items-center py-2 px-4 rounded-2xl', className)}>
       {children}
     </button>
   )
 }
+
+export { IconButton, TooltipButton };
