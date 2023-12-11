@@ -31,7 +31,7 @@ const paginationTheme: CustomFlowbiteTheme = {
       icon: "h-5 w-5"
     },
     selector: {
-      base: "w-12 border border-gray-300 bg-white py-2 leading-tight text-gray-500 hover:bg-gray-100",
+      base: "w-10 border border-gray-300 bg-white py-2 leading-tight text-gray-500 hover:bg-gray-100",
       active: "bg-cyan-50 text-white bg-[#0066ff] hover:bg-blue-700 hover:text-white",
       disabled: "opacity-50 cursor-normal"
     }
