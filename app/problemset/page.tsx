@@ -5,9 +5,38 @@ import { IconButton } from '@/components/button'
 import { Badge, Card, Pagination } from 'flowbite-react'
 import { FaArrowRight } from 'react-icons/fa6'
 
+/* theme */
+import type { CustomFlowbiteTheme } from 'flowbite-react'
+
 /* useful stuff */
 import Link from 'next/link'
 import { useState } from 'react'
+
+const paginationTheme: CustomFlowbiteTheme = {
+  layout: {
+    table: {
+      base: "text-sm text-gray-700",
+      span: "font-semibold text-gray-900"
+    }
+  },
+  pages: {
+    base: "xs:mt-0 mt-2 inline-flex items-center -space-x-px",
+    showIcon: "inline-flex",
+    previous: {
+      base: "ml-0 rounded-l-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700",
+      icon: "h-5 w-5"
+    },
+    next: {
+      base: "rounded-r-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700",
+      icon: "h-5 w-5"
+    },
+    selector: {
+      base: "w-12 border border-gray-300 bg-white py-2 leading-tight text-gray-500 hover:bg-gray-100",
+      active: "bg-cyan-50 text-white bg-[#0066ff] hover:bg-blue-700 hover:text-white",
+      disabled: "opacity-50 cursor-normal"
+    }
+  }
+};
 
 export default function ProblemsetPage() {
 
@@ -29,11 +58,10 @@ export default function ProblemsetPage() {
     {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
     {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
   ];
-  console.log(parseInt(test_data.length / 10));
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  const onPageChange = (page) => setCurrentPage(page);
+  const onPageChange = (page: number) => setCurrentPage(page);
 
   return (
     <div className="flex flex-col justify-center px-16">
@@ -79,7 +107,7 @@ export default function ProblemsetPage() {
             ))
           }
           <div className="flex overflow-x-auto sm:justify-center">
-            <Pagination currentPage={currentPage} totalPages={parseInt(test_data.length / 10 + 1)} onPageChange={onPageChange} showIcons className="" />
+            <Pagination currentPage={currentPage} totalPages={parseInt(test_data.length / 10 + 1)} onPageChange={onPageChange} showIcons theme={paginationTheme} />
           </div>
         </div>
         <div>
