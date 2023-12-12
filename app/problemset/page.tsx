@@ -53,7 +53,7 @@ export default function ProblemsetPage() {
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageOffset, setPageOffset] = useState(10);
-  const totalPages: number = pageOffset === 0 ? 0 : parseInt((test_data.length / pageOffset).toString()) + 1;
+  const totalPages: number = pageOffset === 0 ? 0 : parseInt(Math.round(test_data.length / pageOffset).toString());
 
   const onPageChange = (page: number) => setCurrentPage(page);
 
@@ -97,8 +97,8 @@ export default function ProblemsetPage() {
             .slice((currentPage - 1) * pageOffset, currentPage * pageOffset)
             .map((problemset, idx) => (
             <Card className="max-w-full mb-2 rounded-xl">
-              <Link href={`/problemset/${problemset.id}`} className="text-xl font-sans font-bold tracking-tight text-gray-900">
-                <span className="hover:text-[#0066ff] hover:underline hover:underline-offset-4">{(idx + 1) + ". " + problemset.name}</span>
+              <Link href={`/problemset/${problemset.id}`} className="text-xl font-[sfprorounded-bold] font-bold tracking-tight text-gray-900">
+                <span className="hover:text-[#0066ff] hover:underline hover:underline-offset-4">{problemset.name}</span>
               </Link>
               <div className="font-normal text-gray-700 flex-col">
                 <div className="text-sm align-middle flex">Difficulity: <Badge className="ml-1 rounded-lg" color="failure">{problemset.avg_diff}</Badge></div>
