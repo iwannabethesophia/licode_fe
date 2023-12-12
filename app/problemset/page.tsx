@@ -152,7 +152,7 @@ export default function ProblemsetPage() {
             </div>
             <input value={searchbox_NameValue} onChange={event => set_searchbox_NameValue(event.target.value)} className="ps-10 block outline-none w-full text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200" placeholder="Search problemset name"/>
           </div>
-          <div className="flex justify-end space-x-1">
+          <div className="flex justify-end space-x-1.5">
             <IconButton className="bg-gray-200 text-black text-sm hover:bg-gray-300" onClick={searchbox_ResetEvent}>
               Reset
             </IconButton>
