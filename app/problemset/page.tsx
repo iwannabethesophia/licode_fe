@@ -150,7 +150,7 @@ export default function ProblemsetPage() {
             <div className="absolute inset-y-0 start-0 ps-4 inline-flex items-center">
               <FaSistrix />
             </div>
-            <input value={searchbox_NameValue} onChange={event => set_searchbox_NameValue(event.target.value)} className="ps-10 block border-2 border-slate-100 outline-none w-full text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200 hover:border-slate-200" placeholder="Search problemset name"/>
+            <input value={searchbox_NameValue} onChange={event => set_searchbox_NameValue(event.target.value)} className="ps-10 block outline-none w-full text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200" placeholder="Search problemset name"/>
           </div>
           <div className="flex justify-end space-x-1">
             <IconButton className="bg-gray-200 text-black text-sm hover:bg-gray-300" onClick={searchbox_ResetEvent}>
