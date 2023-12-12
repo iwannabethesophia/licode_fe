@@ -43,21 +43,20 @@ const paginationTheme: CustomFlowbiteTheme = {
 
 export default function ProblemsetPage() {
 
-  const [test_data, setTestData] = useState([
+  const mock_data: Array<any> = [
     {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
     {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
     {"id": "licodeprogrammingcontest2", "name": "CODETON", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
     {"id": "licodeprogrammingcontest1", "name": "CODEFORCES", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
     {"id": "licodeprogrammingcontest2", "name": "Atcoder", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-  ]);
+  ];
+  const [test_data, setTestData] = useState(mock_data);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageOffset, setPageOffset] = useState(10);
   const totalPages: number = pageOffset === 0 ? 0 : parseInt(Math.round(test_data.length / pageOffset).toString());
 
-  const onPageChange = (page: number) => {
-    setCurrentPage(page);
-  }
+  const onPageChange = (page: number) => setCurrentPage(page);
 
   const onPageOffsetChange = (offset: string) => {
     setPageOffset(offset == "" ? 0 : parseInt(offset.toString()));
@@ -67,14 +66,13 @@ export default function ProblemsetPage() {
   /* search box engine */
   const [searchbox_NameValue, set_searchbox_NameValue] = useState("");
 
-  const [searchbox_BackupData, set_searchbox_BackupData] = useState(test_data);
   const searchbox_SearchEvent = (event) => {
     const re = new RegExp(`^.*${searchbox_NameValue}.*$`, "i");
     const searchbox_MatchedValue: Array<any> = test_data.filter(({ name }) => name.match(re));
     setTestData(searchbox_MatchedValue);
   }
   const searchbox_ResetEvent = (event) => {
-    setTestData(searchbox_BackupData);
+    setTestData(mock_data);
     set_searchbox_NameValue("");
   }
 
@@ -104,7 +102,7 @@ export default function ProblemsetPage() {
             .slice((currentPage - 1) * pageOffset, currentPage * pageOffset)
             .map((problemset, idx) => (
             <Card className="max-w-full mb-2 rounded-xl">
-              <Link href={`/problemset/${problemset.id}`} className="text-xl font-[sfprorounded-bold] font-bold tracking-tight text-gray-900">
+              <Link href={`/problemset/${problemset.id}`} className="text-xl font-sans font-bold tracking-tight text-gray-900">
                 <span className="hover:text-[#0066ff] hover:underline hover:underline-offset-4">{problemset.name}</span>
               </Link>
               <div className="font-normal text-gray-700 flex-col">
