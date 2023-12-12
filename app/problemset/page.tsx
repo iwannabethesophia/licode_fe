@@ -121,7 +121,7 @@ export default function ProblemsetPage() {
               </div>
               <div className="absolute right-0 mr-6">
                 <Link href={`/problemset/${problemset.id}`}>
-                  <IconButton className="bg-white text-[#0066ff] border-2 border-[#0066ff] hover:border-blue-700 hover:text-white hover:bg-blue-700 transition duration-300 px-4 py-2">
+                  <IconButton className="bg-[#0066ff] text-white hover:bg-blue-700 transition duration-300 px-4 py-2 shadow-xl">
                     Challenge
                     <FaArrowRight className="ml-2"/>
                   </IconButton>
