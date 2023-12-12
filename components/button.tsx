@@ -25,12 +25,12 @@ function TooltipButton({
   )
 }
 
-function IconButton({ className="", children }) {
+function IconButton({ children, className="", ...attribute}) {
   return (
-    <button className={twMerge('flex items-center py-2 px-4 rounded-2xl', className)}>
+    <button className={twMerge('flex items-center py-2 px-4 rounded-2xl', className)} {...attribute}>
       {children}
     </button>
   )
 }
 
-export { IconButton, TooltipButton };
+export {IconButton, TooltipButton};
