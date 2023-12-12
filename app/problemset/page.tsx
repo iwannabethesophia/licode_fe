@@ -3,7 +3,10 @@
 /* components and icon */
 import { IconButton } from '@/components/button'
 import { Badge, Card, Pagination } from 'flowbite-react'
-import { FaArrowRight } from 'react-icons/fa6'
+import {
+  FaArrowRight,
+  FaSistrix,
+} from 'react-icons/fa6'
 
 /* theme */
 import type { CustomFlowbiteTheme } from 'flowbite-react'
@@ -40,46 +43,33 @@ const paginationTheme: CustomFlowbiteTheme = {
 
 export default function ProblemsetPage() {
 
-  const test_data: Array<any> = [
+  const [test_data, setTestData] = useState([
     {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
     {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-    {"id": "licodeprogrammingcontest2", "name": "LICODE PROGRAMMING CONTEST #2", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
-    {"id": "licodeprogrammingcontest1", "name": "LICODE PROGRAMMING CONTEST #1", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
-  ];
+    {"id": "licodeprogrammingcontest2", "name": "CODETON", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
+    {"id": "licodeprogrammingcontest1", "name": "CODEFORCES", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
+    {"id": "licodeprogrammingcontest2", "name": "Atcoder", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
+  ]);
 
   const [currentPage, setCurrentPage] = useState(1);
   const [pageOffset, setPageOffset] = useState(10);
   const totalPages: number = pageOffset === 0 ? 0 : parseInt((test_data.length / pageOffset).toString()) + 1;
 
   const onPageChange = (page: number) => setCurrentPage(page);
+
+  /* search box engine */
+  const [searchbox_NameValue, set_searchbox_NameValue] = useState("");
+
+  const [searchbox_BackupData, set_searchbox_BackupData] = useState(test_data);
+  const searchbox_SearchEvent = (event) => {
+    const re = new RegExp(`^.*${searchbox_NameValue}.*$`, "i");
+    const searchbox_MatchedValue: Array<any> = test_data.filter(({ name }) => name.match(re));
+    setTestData(searchbox_MatchedValue);
+  }
+  const searchbox_ResetEvent = (event) => {
+    setTestData(searchbox_BackupData);
+    set_searchbox_NameValue("");
+  }
 
   return (
   <div className="flex flex-col justify-center px-16">
@@ -99,14 +89,14 @@ export default function ProblemsetPage() {
         </div>
         {
           pageOffset == 0 || test_data.length == 0 ?
-          <Card className="my-4">
+          <Card className="my-4 rounded-xl">
             <h2 className="text-center text-3xl font-sans font-bold py-8">No problemset found.</h2>
           </Card>
           :
           test_data
             .slice((currentPage - 1) * pageOffset, currentPage * pageOffset)
             .map((problemset, idx) => (
-            <Card className="max-w-full mb-2">
+            <Card className="max-w-full mb-2 rounded-xl">
               <Link href={`/problemset/${problemset.id}`} className="text-xl font-sans font-bold tracking-tight text-gray-900">
                 <span className="hover:text-[#0066ff] hover:underline hover:underline-offset-4">{(idx + 1) + ". " + problemset.name}</span>
               </Link>
@@ -151,11 +141,27 @@ export default function ProblemsetPage() {
         </div>
       </div>
     <div>
-      <Card className="max-w-full">
+      <Card className="max-w-full rounded-2xl">
         <h5 className="text-xl font-sans font-bold tracking-tight text-gray-900">
           Search problemset
         </h5>
-        <div className="font-normal text-gray-400">Coming soon...</div>
+        <div className="flex flex-col">
+          <div className="relative mb-2">
+            <div className="absolute inset-y-0 start-0 ps-4 inline-flex items-center">
+              <FaSistrix />
+            </div>
+            <input value={searchbox_NameValue} onChange={event => set_searchbox_NameValue(event.target.value)} className="ps-10 block border-2 border-slate-100 outline-none w-full text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200 hover:border-slate-200" placeholder="Search problemset name"/>
+          </div>
+          <div className="flex justify-end space-x-1">
+            <IconButton className="bg-gray-200 text-black text-sm hover:bg-gray-300" onClick={searchbox_ResetEvent}>
+              Reset
+            </IconButton>
+            <IconButton className="bg-[#0066ff] text-white text-sm hover:bg-blue-700" onClick={searchbox_SearchEvent}>
+              <FaSistrix className="mr-2" />
+              Search
+            </IconButton>
+          </div>
+        </div>
       </Card>
     </div>
   </div>
