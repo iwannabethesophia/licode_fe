@@ -35,20 +35,20 @@ export default function LicodeNavbar() {
             <div className="absolute inset-y-0 start-0 ps-3 inline-flex items-center">
               <FaSistrix />
             </div>
-            <input className="ps-10 block border-2 border-slate-100 outline-none w-96 text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200 hover:border-slate-200" placeholder="Search something"/>
+            <input className="ps-10 block outline-none w-96 text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200" placeholder="Search something"/>
           </div>
 
           <DividerX height={8} color="gray-300" />
 
-          <div className="flex space-x-2">
+          <div className="flex space-x-1.5">
             <Link href="/register">
-              <IconButton className="bg-white text-[#0066ff] border-2 border-[#0066ff] hover:bg-[#0066ff] hover:text-white hover:border-[#0066ff] transition duration-300 text-sm rounded-xl">
+              <IconButton className="text-white bg-[#0066ff] hover:bg-blue-700 text-sm rounded-xl hover:scale-110 hover:shadow-xl transition duration-300">
                 Register
                 <FaArrowRight className="ml-2" />
               </IconButton>
             </Link>
             <Link href="/login">
-              <IconButton className="bg-[#0066ff] border-2 border-[#0066ff] hover:border-blue-700 hover:bg-blue-700 text-sm text-white rounded-xl">
+              <IconButton className="bg-[#0066ff] hover:bg-blue-700 text-sm text-white rounded-xl hover:scale-110 hover:shadow-xl transition duration-300">
                 Login
                 <FaArrowRight className="ml-2" />
               </IconButton>
