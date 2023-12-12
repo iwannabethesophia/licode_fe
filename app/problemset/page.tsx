@@ -55,7 +55,14 @@ export default function ProblemsetPage() {
   const [pageOffset, setPageOffset] = useState(10);
   const totalPages: number = pageOffset === 0 ? 0 : parseInt(Math.round(test_data.length / pageOffset).toString());
 
-  const onPageChange = (page: number) => setCurrentPage(page);
+  const onPageChange = (page: number) => {
+    setCurrentPage(page);
+  }
+
+  const onPageOffsetChange = (offset: string) => {
+    setPageOffset(offset == "" ? 0 : parseInt(offset.toString()));
+    setCurrentPage(1);
+  }
 
   /* search box engine */
   const [searchbox_NameValue, set_searchbox_NameValue] = useState("");
@@ -84,7 +91,7 @@ export default function ProblemsetPage() {
           </div>
           <div className="flex items-center justify-end mt-2">
             <label>Entries:</label>
-            <input className="ml-2 outline-none bg-slate-100 px-4 py-1 w-16 rounded-xl hover:bg-slate-200" value={pageOffset} onChange={event => setPageOffset(event.target.value == "" ? 0 : parseInt(event.target.value.toString()))} />
+            <input className="ml-2 outline-none bg-slate-100 px-4 py-1 w-16 rounded-xl hover:bg-slate-200" value={pageOffset} onChange={event => onPageOffsetChange(event.target.value)} />
           </div>
         </div>
         {
