@@ -19,9 +19,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 ## TODO
-```
-* Complete search problemset filter 
-```
+* Add KBD into main search box and bind hotkeys for main search box.
+* Create modal search when click into main search box.
 
 ## Learn More
 
