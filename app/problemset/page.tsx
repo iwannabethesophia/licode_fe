@@ -86,6 +86,7 @@ export default function ProblemsetPage() {
   const searchbox_ResetEvent = (event) => {
     setTestData(mock_data);
     set_searchbox_NameValue("");
+    set_searchbox_SortByDifficulityMode(0);
   }
 
   return (
