@@ -7,6 +7,7 @@ import {
   FaArrowRight,
   FaSistrix,
 } from 'react-icons/fa6'
+import { Selector, SelectorOption } from '@/components/selector'
 
 /* theme */
 import type { CustomFlowbiteTheme } from 'flowbite-react'
@@ -66,9 +67,20 @@ export default function ProblemsetPage() {
   /* search box engine */
   const [searchbox_NameValue, set_searchbox_NameValue] = useState("");
 
+  /* sort by engine */
+  const [searchbox_SortByDifficulityMode, set_searchbox_SortByDifficulityMode] = useState(0);
+
   const searchbox_SearchEvent = (event) => {
     const re = new RegExp(`^.*${searchbox_NameValue}.*$`, "i");
-    const searchbox_MatchedValue: Array<any> = test_data.filter(({ name }) => name.match(re));
+    const searchbox_MatchedValue: Array<any> = mock_data.filter(({ name }) => name.match(re));
+    /* if state of sort by isn't 0 */
+    if (searchbox_SortByDifficulityMode != 0) {
+      console.log(searchbox_MatchedValue);
+      searchbox_MatchedValue.sort((x, y) => {
+        return x.avg_diff > y.avg_diff ?  searchbox_SortByDifficulityMode :
+              (x.avg_diff < y.avg_diff ? -searchbox_SortByDifficulityMode : 0);
+      });
+    }
     setTestData(searchbox_MatchedValue);
   }
   const searchbox_ResetEvent = (event) => {
@@ -157,7 +169,15 @@ export default function ProblemsetPage() {
             </div>
             <input value={searchbox_NameValue} onChange={event => set_searchbox_NameValue(event.target.value)} className="ps-10 block outline-none w-full text-sm px-4 py-2 bg-slate-100 rounded-xl hover:bg-slate-200" placeholder="Search problemset name"/>
           </div>
-          <div className="flex justify-end space-x-1.5">
+          <div className="md:flex sm:flex items-center">
+            <label className="mr-2">Sort by difficulity:</label>
+            <Selector value={searchbox_SortByDifficulityMode} onChange={(e) => set_searchbox_SortByDifficulityMode(e.target.value)}>
+              <SelectorOption value={0}  text="None" selected />
+              <SelectorOption value={1}  text="Ascending" />
+              <SelectorOption value={-1} text="Descending" />
+            </Selector>
+          </div>
+          <div className="flex justify-end space-x-1.5 mt-3">
             <IconButton className="bg-gray-200 text-black text-sm hover:bg-gray-300" onClick={searchbox_ResetEvent}>
               Reset
             </IconButton>
