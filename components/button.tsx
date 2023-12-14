@@ -14,11 +14,12 @@ function TooltipButton({
   tooltipPlacement="top",
   tooltipArrow=false,
   tooltipAnimation="duration-300",
-  children
+  children,
+  ...attribute
 }) {
   return (
     <Tooltip content={tooltipContent} trigger={tooltipTrigger} placement={tooltipPlacement} arrow={tooltipArrow} className={tooltipClassName} animation={tooltipAnimation}>
-      <button className={twMerge('flex items-center py-2 px-4 rounded-2xl', buttonClassName)}>
+      <button className={twMerge('flex items-center py-2 px-4 rounded-2xl', buttonClassName)} {...attribute}>
         {children}
       </button>
     </Tooltip>
