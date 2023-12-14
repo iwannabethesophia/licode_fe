@@ -21,6 +21,7 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 ## TODO
 * edit mock test data set
 * improve problemset card with more data
+* add shake animation for register button when user input invalid register credentials
 
 ## Deploy on Vercel
 
