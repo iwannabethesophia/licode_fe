@@ -122,7 +122,7 @@ export default function RegisterPage() {
                     <FaArrowRightToBracket className="ml-2" />
                   </IconButton>
                   :
-                  <TooltipButton tooltipContent="Please fill in all the information above correctly." tooltipClassName="bg-red-500 opacity-90" buttonClassName="bg-[#0066ff] px-4 py-2 text-white rounded-xl hover:bg-blue-700 focus:bg-red-500 transition duration-300">
+                  <TooltipButton id="register-button" tooltipPlacement="bottom" tooltipContent="Please fill in all the information above correctly." tooltipClassName="bg-red-500 opacity-90" buttonClassName="bg-[#0066ff] px-4 py-2 text-white rounded-xl hover:bg-blue-700 focus:bg-red-500 transition duration-150 focus:animate-shake focus:animate-twice focus:animate-duration-150 focus:animate-ease-in-out">
                     Register
                     <FaArrowRightToBracket className="ml-2" />
                   </TooltipButton>
