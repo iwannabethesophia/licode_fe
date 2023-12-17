@@ -8,10 +8,12 @@ import { DividerX } from '@/components/divider'
 import {
   FaArrowRight,
   FaSistrix,
+  FaRegSun,
 } from "react-icons/fa6"
 
 /* useful stuff */
 import Link from 'next/link'
+import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
 
@@ -22,6 +24,7 @@ export default function LicodeNavbar() {
     {id: 3, title: "About", href: "/about"},
   ];
   const cur_pathname = usePathname();
+
   return (
 <div>
 
