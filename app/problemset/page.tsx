@@ -114,7 +114,7 @@ export default function ProblemsetPage() {
           test_data
             .slice((currentPage - 1) * pageOffset, currentPage * pageOffset)
             .map((problemset, idx) => (
-            <Card className="max-w-full mb-2 rounded-xl">
+            <Card className="max-w-full mb-2 rounded-xl" key={problemset.id}>
               <Link href={`/problemset/${problemset.id}`} className="text-xl font-sans font-bold tracking-tight text-gray-900">
                 <span className="hover:text-[#0066ff] hover:underline hover:underline-offset-4">{problemset.name}</span>
               </Link>
@@ -124,7 +124,7 @@ export default function ProblemsetPage() {
                   Problemset tag:
                   {
                     problemset.tag.map(t => (
-                     <Badge className="ml-1 rounded-lg" color="info">{t}</Badge>
+                     <Badge className="ml-1 rounded-lg" color="info" key={t}>{t}</Badge>
                     ))
                   }
                 </div>
@@ -132,7 +132,7 @@ export default function ProblemsetPage() {
                   Authors:
                   {
                     problemset.authors.map(author => (
-                     <Badge className="ml-1 rounded-lg" color="gray">{author}</Badge>
+                     <Badge className="ml-1 rounded-lg" color="gray" key={author}>{author}</Badge>
                     ))
                   }
                 </div>
