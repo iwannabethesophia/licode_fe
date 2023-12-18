@@ -16,7 +16,7 @@ export default function LoginPage() {
         <h1 className="flex text-3xl font-mono">dev for the future.</h1>
       </div>
       <div className="p-6 space-y-4 shadow-xl rounded-lg bg-white w-4/12 border border-gray-100">
-        <h1 className="text-2xl font-[sfprorounded-bold] leading-tight tracking-tight">Log in to your account</h1>
+        <h1 className="text-2xl font-sans font-bold text-center leading-tight tracking-tight">Log in to your account</h1>
         <div className="space-y-4">
           <div>
             <label className="text-sm text-gray-800">Username</label>
