@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bunx --bun next dev",
+    "dev": "next dev",
+    "dev-with-bun": "bunx --bun next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
