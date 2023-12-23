@@ -19,9 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
 ## TODO
-* edit mock test data set
-* improve problemset card with more data
-* add shake animation for register button when user input invalid register credentials (done)
+* add more mock tag
+* complete filter by tag function
+
+Someone say why i use Flowbite, ye i use for very advanced components :).
 
 ## Deploy on Vercel
 
