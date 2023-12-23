@@ -12,37 +12,11 @@ import {
 import { Selector, SelectorOption } from '@/components/selector'
 
 /* theme */
-import type { CustomFlowbiteTheme } from 'flowbite-react'
+import { paginationDefaultTheme } from '@/theme/pagination_theme'
 
 /* useful stuff */
 import Link from 'next/link'
 import { useState } from 'react'
-
-const paginationTheme: CustomFlowbiteTheme = {
-  layout: {
-    table: {
-      base: "text-sm text-gray-700",
-      span: "font-semibold text-gray-900"
-    }
-  },
-  pages: {
-    base: "xs:mt-0 mt-2 inline-flex items-center -space-x-px",
-    showIcon: "inline-flex",
-    previous: {
-      base: "ml-0 rounded-l-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700",
-      icon: "h-5 w-5"
-    },
-    next: {
-      base: "rounded-r-lg border border-gray-300 bg-white py-2 px-3 leading-tight text-gray-500 enabled:hover:bg-gray-100 enabled:hover:text-gray-700",
-      icon: "h-5 w-5"
-    },
-    selector: {
-      base: "w-10 border border-gray-300 bg-white py-2 leading-tight text-gray-500 hover:bg-gray-100",
-      active: "bg-cyan-50 text-white bg-[#0066ff] hover:bg-blue-700 hover:text-white",
-      disabled: "opacity-50 cursor-normal"
-    }
-  }
-};
 
 export default function ProblemsetPage() {
 
@@ -55,6 +29,7 @@ export default function ProblemsetPage() {
   ];
   const list_tag: Array<any> = [
     {tag: "math", name: "Mathematics"},
+    {tag: "greedy", name: "Greedy"},
     {tag: "dp", name: "Dynamic programming"},
     {tag: "geometry", name: "Geometry"},
     {tag: "adhoc", name: "Ad-hoc"},
@@ -107,7 +82,7 @@ export default function ProblemsetPage() {
       <div className="relative col-span-2">
         <div className="flex items-center justify-between overflow-x-auto mb-4">
           <div className="flex items-center justify-center">
-            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} theme={paginationTheme} showIcons />
+            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} theme={paginationDefaultTheme} showIcons />
           </div>
           <div className="flex items-center justify-end mt-2">
             <label>Entries:</label>
