@@ -2,6 +2,8 @@
 
 /* components and icon */
 import { IconButton } from '@/components/button'
+import { Checkbox } from '@/components/checkbox'
+import { TextDivider } from '@/components/divider'
 import { Badge, Card, Pagination } from 'flowbite-react'
 import {
   FaArrowRight,
@@ -51,6 +53,13 @@ export default function ProblemsetPage() {
     {"id": "licodeprogrammingcontest1", "name": "CODEFORCES", "authors": ["iwannabetheguy", "tourist"], "avg_diff": 2754.6, "tag": ["graph", "geometry"]},
     {"id": "licodeprogrammingcontest2", "name": "Atcoder", "authors": ["ecnerwala", "Errichto"], "avg_diff": 3282.1, "tag": ["geometry", "fft", "adhoc"]},
   ];
+  const list_tag: Array<any> = [
+    {tag: "math", name: "Mathematics"},
+    {tag: "dp", name: "Dynamic programming"},
+    {tag: "geometry", name: "Geometry"},
+    {tag: "adhoc", name: "Ad-hoc"},
+    {tag: "graph", name: "Graph"},
+  ]
   const [test_data, setTestData] = useState(mock_data);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -92,7 +101,7 @@ export default function ProblemsetPage() {
   return (
   <div className="flex flex-col justify-center px-16">
     <div className="mb-4">
-      <h2 className="font-sans text-2xl font-bold">LIST OF PROBLEMSET</h2>
+      <h2 className="font-sans text-2xl font-bold tracking-tight">LIST OF PROBLEMSET</h2>
     </div>
     <div className="grid grid-cols-3 gap-4 w-full">
       <div className="relative col-span-2">
@@ -160,9 +169,9 @@ export default function ProblemsetPage() {
       </div>
     <div>
       <Card className="max-w-full rounded-2xl">
-        <h5 className="text-xl font-sans font-bold tracking-tight text-gray-900">
-          Search problemset
-        </h5>
+        <TextDivider textPlacement="left">
+          <h2 className="text-xl font-sans font-bold">Search problemset</h2>
+        </TextDivider>
         <div className="flex flex-col">
           <div className="relative mb-2">
             <div className="absolute inset-y-0 start-0 ps-4 inline-flex items-center">
@@ -173,9 +182,9 @@ export default function ProblemsetPage() {
           <div className="md:flex sm:flex items-center">
             <label className="mr-2">Sort by difficulity:</label>
             <Selector value={searchbox_SortByDifficulityMode} onChange={(e) => set_searchbox_SortByDifficulityMode(e.target.value)}>
-              <SelectorOption value={0}  text="None" selected />
-              <SelectorOption value={1}  text="Ascending" />
-              <SelectorOption value={-1} text="Descending" />
+              <SelectorOption value={(0).toString()}  text="None" />
+              <SelectorOption value={(1).toString()}  text="Ascending" />
+              <SelectorOption value={(-1).toString()} text="Descending" />
             </Selector>
           </div>
           <div className="flex justify-end space-x-1.5 mt-3">
@@ -186,6 +195,18 @@ export default function ProblemsetPage() {
               <FaSistrix className="mr-2" />
               Search
             </IconButton>
+          </div>
+        </div>
+        <div className="flex-col space-y-3">
+          <TextDivider textPlacement="left">
+            <h2 className="font-sans font-bold text-xl">Filter by tag</h2>
+          </TextDivider>
+          <div className="flex-col space-y-1">
+            {
+              list_tag.map(problem_tag => (
+                <Checkbox text={problem_tag.name} key={problem_tag.tag} />
+              ))
+            }
           </div>
         </div>
       </Card>
