@@ -134,7 +134,7 @@ export default function ProblemsetPage() {
         }
         <div className="flex justify-between items-center overflow-x-auto mb-4">
           <div className="flex items-center justify-center">
-            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} theme={paginationTheme} showIcons />
+            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange} theme={paginationDefaultTheme} showIcons />
           </div>
           <div className="flex items-center justify-end mt-2">
             <label>Entries:</label>
